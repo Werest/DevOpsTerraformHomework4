@@ -1,15 +1,20 @@
 terraform {
   required_providers {
     yandex = {
-      source = "yandex-cloud/yandex"
+      source  = "yandex-cloud/yandex"
+      version = "~>0.144.0"
+    }
+    template = {
+      source  = "hashicorp/template"
+      version = "~> 2"
     }
   }
   required_version = "~>1.8.4"
 
   backend "s3" {
-    region   = "ru-central1"
-    bucket   = "backet-werest-develop"
-    key      = "terraform.state"
+    region = "ru-central1"
+    bucket = "backet-werest-develop"
+    key    = "terraform.state"
 
     skip_region_validation      = true
     skip_credentials_validation = true
