@@ -15,7 +15,7 @@ module "vpc" {
 }
 
 module "marketing-vm" {
-  source   = "git::https://github.com/udjin10/yandex_compute_instance.git?ref=main"
+  source   = "git::https://github.com/udjin10/yandex_compute_instance.git?ref=09144db"
   env_name = var.vm_marketing.env_name
   # network_id     = yandex_vpc_network.develop.id
   network_id   = module.vpc.vpc_network.id
@@ -39,7 +39,7 @@ module "marketing-vm" {
 }
 
 module "analytics-vm" {
-  source   = "git::https://github.com/udjin10/yandex_compute_instance.git?ref=main"
+  source   = "git::https://github.com/udjin10/yandex_compute_instance.git?ref=09144db"
   env_name = var.vm_analytics.env_name
   # network_id     = yandex_vpc_network.develop.id
   network_id     = module.vpc.vpc_network.id
